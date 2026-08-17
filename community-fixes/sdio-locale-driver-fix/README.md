@@ -17,6 +17,7 @@ community-fixes/sdio-locale-driver-fix/
   README.md
   scripts/
     Run-SDIO-Safe.ps1
+    SDIO-QuickLauncher.ps1
     Verify-LocaleFix.ps1
     AfterBoot-Verify.ps1
     Fix-Locale-DisableUTF8Beta.ps1
@@ -33,6 +34,17 @@ cd C:\YourPath\SnappyDriver-almorshednet\community-fixes\sdio-locale-driver-fix\
 .\Verify-LocaleFix.ps1      # تحقق سريع + فحص Log بدون تثبيت
 .\Run-SDIO-Safe.ps1 -DryRun # فحص بدون تعديل drivers
 ```
+
+### Quick launcher (Scan / Re-Scan / Update)
+
+```powershell
+cd C:\YourPath\SnappyDriver-almorshednet\community-fixes\sdio-locale-driver-fix\scripts
+.\SDIO-QuickLauncher.ps1 -SdioDir "C:\SDIO_1.18.0.830"
+```
+
+- Scan: يعمل `-DryRun` على SDIO بدون تثبيت فعلي.
+- Re-Scan: يشغّل `Run-SDIO-Safe.ps1` على نفس إعدادات المسار الحالي.
+- Update: يفحص release آخر للحزمة في GitHub ويفتح صفحة التحديث إذا متاح.
 
 ### For actual install run
 
