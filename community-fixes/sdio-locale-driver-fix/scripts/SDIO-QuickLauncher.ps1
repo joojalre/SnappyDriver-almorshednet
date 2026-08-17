@@ -304,10 +304,31 @@ $poll.Add_Tick({
 $localTag = $null
 $repoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
 if (Test-Path -LiteralPath $repoRoot) {
-    $tagFile = Join-Path $repoRoot '.git\packed-refs'
-    if (Test-Path -LiteralPath $tagFile) {
-        $tagLine = Select-String -Path $tagFile -Pattern 'refs/tags/v1.0.0-sdio-locale-fix-pack' -SimpleMatch -ErrorAction SilentlyContinue
-        if ($tagLine) { $localTag = 'v1.0.0-sdio-locale-fix-pack' }
+    $gitDir = Join-Path $repoRoot '.git'
+    if (Test-Path -LiteralPath $gitDir) {
+        try {
+            $tagOutput = & git -C $repoRoot describe --tags --abbrev=0 2>$null
+            if (-not [string]::IsNullOrWhiteSpace($tagOutput)) {
+                $localTag = $tagOutput.Trim()
+            }
+        } catch {
+            # ignore - keep fallback path if git describe is unavailable
+        }
+    }
+
+    if (-not $localTag) {
+        $tagFile = Join-Path $repoRoot '.git\packed-refs'
+        if (Test-Path -LiteralPath $tagFile) {
+            $tagLine = Select-String -Path $tagFile -Pattern 'refs/tags/' -SimpleMatch -ErrorAction SilentlyContinue |
+                Sort-Object LineNumber -Descending |
+                Select-Object -First 1
+            if ($tagLine) {
+                $parts = ($tagLine.Line -split ' ')
+                if ($parts.Length -ge 2) {
+                    $localTag = $parts[1] -replace '^refs/tags/',''
+                }
+            }
+        }
     }
 }
 
