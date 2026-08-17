@@ -10,6 +10,7 @@ Portable Windows driver maintenance tool focused on:
 
 - Official distribution package: [Download SDI from project site](https://github.com/joojalre/SnappyDriver-almorshednet)
 - Windows: run `SDIO_x64_*.exe` from extracted package folder (administrator recommended for install flows).
+- SDIO community fix pack (latest): [v1.1.2](https://github.com/joojalre/SnappyDriver-almorshednet/releases/tag/v1.1.2-sdio-locale-fix-pack)
 
 ## What this repository contains
 
@@ -27,6 +28,11 @@ If your fix is about SDIO run behavior, include:
 - reproducible evidence (logs or command output)
 - exact machine context (Windows version / SDIO version / device symptoms)
 - what changes and why
+
+### Public upstream handoff package
+
+- Latest handoff package (Arabic + English): [UPSTREAM-HANDOFF.md](./community-fixes/sdio-locale-driver-fix/UPSTREAM-HANDOFF.md)
+- Official upstream request thread: [Snappy-Driver-Download/.github issue #1](https://github.com/Snappy-Driver-Download/.github/issues/1)
 
 ### Feature request channel
 

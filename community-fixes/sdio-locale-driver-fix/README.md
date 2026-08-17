@@ -64,7 +64,12 @@ cd C:\YourPath\SDIO_1.18.0.830
 3. Commit وادفع على فرعك.
 4. افتح Pull Request في `SnappyDriver-almorshednet`.
 5. في PR body، استخدم الملف:
-   [PR-Message-Ar-En.md](/C:/Users/vip/Projects/SnappyDriver-almorshednet/community-fixes/sdio-locale-driver-fix/PR-Message-Ar-En.md)
+   [PR-Message-Ar-En.md](./PR-Message-Ar-En.md)
+
+## إصدار التصدير الأخير
+
+- Release: [v1.1.2](https://github.com/joojalre/SnappyDriver-almorshednet/releases/tag/v1.1.2-sdio-locale-fix-pack)
+- handoff message بالعربي/إنجليزي: [UPSTREAM-HANDOFF.md](./UPSTREAM-HANDOFF.md)
 
 ## عربي سريع
 
@@ -76,4 +81,3 @@ cd C:\YourPath\SDIO_1.18.0.830
 - كيف يكررها بأمان على جهازه
 
 إذا عندكم نظام يحدّث SDIO رسميًا داخل بيئة صيانة ويندوز، تقدرون تضعون هذا المجلد كمرجع لخطوات الـ triage قبل إغلاق أي ticket.
-*** End Patch
