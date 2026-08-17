@@ -27,3 +27,9 @@ If your fix is about SDIO run behavior, include:
 - reproducible evidence (logs or command output)
 - exact machine context (Windows version / SDIO version / device symptoms)
 - what changes and why
+
+### Feature request channel
+
+This repository keeps issues disabled, so feature requests should be sent as PRs with a documented proposal.
+
+- Proposed UI request (Scan / Re-Scan / Update): [FEATURE_REQUEST_UI_BUTTONS.md](./FEATURE_REQUEST_UI_BUTTONS.md)

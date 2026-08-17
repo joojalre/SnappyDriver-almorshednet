@@ -58,3 +58,17 @@ Current device state is clean (0 devices with `ConfigManagerErrorCode != 0`), bu
 - Keep misc packs in place by default (`DP_Misc_*.7z`).
 
 This PR only adds investigation/verification tooling and operational guidance, so downstream users can reproduce and confirm behavior without extra tooling.
+
+### Follow-up feature request
+
+Could the next SDIO UI add direct controls for:
+- Scan
+- Re-Scan
+- Update
+
+That would remove most manual script reruns in recurring maintenance scenarios.
+
+### طلب متابعة (عربي)
+
+- إضافة زر `Scan` للبدء، زر `Re-Scan` لإعادة الفحص بعد أي تعديل، وزر `Update` للتحقق من آخر نسخة وتحديثها.
+- هذي الواجهة تقلل من التكرار اليدوي وتسهيّل سير صيانة أجهزة المستخدم.
